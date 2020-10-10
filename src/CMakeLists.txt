@@ -14,7 +14,18 @@ set(wxWidgets_USE_STATIC 1)
 
 find_package(wxWidgets REQUIRED)
 
+set(SRCS main.cpp)
+
+# resource file for windows
+if(WIN32)
+  set(SRCS ${SRCS} minimal.rc)
+endif(WIN32)
+
 include(${wxWidgets_USE_FILE})
-add_executable(main main.cpp)
+
+# the WIN32 is needed for Windows in order for it to look for WinMain
+# instead of the main function. This is ignored on other systems,
+# so it works on all platforms
+add_executable(main WIN32 ${SRCS})
 
 target_link_libraries(main PRIVATE ${wxWidgets_LIBRARIES})
