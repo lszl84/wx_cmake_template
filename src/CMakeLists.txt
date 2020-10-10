@@ -16,11 +16,6 @@ find_package(wxWidgets REQUIRED)
 
 set(SRCS main.cpp)
 
-# resource file for windows
-if(WIN32)
-  set(SRCS ${SRCS} main.rc)
-endif(WIN32)
-
 include(${wxWidgets_USE_FILE})
 
 # the WIN32 is needed for Windows in order for it to look for WinMain
