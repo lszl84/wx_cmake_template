@@ -18,7 +18,7 @@ set(SRCS main.cpp)
 
 # resource file for windows
 if(WIN32)
-  set(SRCS ${SRCS} minimal.rc)
+  set(SRCS ${SRCS} main.rc)
 endif(WIN32)
 
 include(${wxWidgets_USE_FILE})
