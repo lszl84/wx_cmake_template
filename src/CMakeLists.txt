@@ -18,9 +18,14 @@ set(SRCS main.cpp)
 
 include(${wxWidgets_USE_FILE})
 
-# the WIN32 is needed for Windows in order for it to look for WinMain
-# instead of the main function. This is ignored on other systems,
-# so it works on all platforms
-add_executable(main WIN32 ${SRCS})
+if (APPLE)
+    # create bundle on apple compiles
+    add_executable(main MACOSX_BUNDLE ${SRCS} )
+else()
+    # the WIN32 is needed for Windows in order for it to look for WinMain
+    # instead of the main function. This is ignored on other systems,
+    # so it works on all platforms
+    add_executable(main WIN32 ${SRCS})
+endif()
 
 target_link_libraries(main PRIVATE ${wxWidgets_LIBRARIES})
