@@ -2,10 +2,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) Launch",
+            "name": "(lldb-mac) Launch",
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/subprojects/Build/wx_cmake_template_core/main.app",
+            "preLaunchTask": "Build with CMake"
+        },
+        {
+            "name": "(lldb-linux) Launch",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/subprojects/Build/wx_cmake_template_core/main",
             "preLaunchTask": "Build with CMake"
         },
         {
