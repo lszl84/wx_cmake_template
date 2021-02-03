@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run main",
+            "type": "shell",
+            "command": "open",
+            "args": [
+                "-a",
+                "${workspaceFolder}/build/subprojects/Build/wx_cmake_template_core/main.app"
+            ],
+            "dependsOn": [
+                "Build with CMake"
+            ]
+        },
+        {
+            "label": "Build with CMake",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "Configure with CMake"
+            ]
+        },
+        {
+            "label": "Configure with CMake",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-DCMAKE_BUILD_TYPE=Debug",
+                "-S.",
+                "-Bbuild"
+            ]
+        }
+    ]
+}
