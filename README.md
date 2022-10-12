@@ -1,5 +1,7 @@
 # wx_cmake_template
 
+**THIS IS A WORK IN PROGRESS. Do not use until merged to master.**
+
 A template for multiplatform WxWidgets projects using CMake.
 
 This is now updated to work with wxWidgets 3.2.1. If you need the 3.1.4 version (also desribed in https://www.youtube.com/watch?v=MfuBS9n5_aY&t=4s), check out the v3.1.4 tag.
