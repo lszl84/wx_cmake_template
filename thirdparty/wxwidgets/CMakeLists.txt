@@ -13,19 +13,28 @@ else()
         GIT_REPOSITORY
         https://github.com/wxWidgets/wxWidgets.git
         GIT_TAG
-        v3.1.4
+        v3.2.1
         UPDATE_COMMAND
         ""
         CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=${STAGED_INSTALL_PREFIX}
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-        -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
-        -DCMAKE_CXX_STANDARD=${CMAKE_CXX_STANDARD}
-        -DCMAKE_CXX_EXTENSIONS=${CMAKE_CXX_EXTENSIONS}
-        -DCMAKE_CXX_STANDARD_REQUIRED=${CMAKE_CXX_STANDARD_REQUIRED}
         -DwxBUILD_SHARED=OFF
-        CMAKE_CACHE_ARGS
-        -DCMAKE_CXX_FLAGS:STRING=${CMAKE_CXX_FLAGS}
+
+        # Skip build step - wxWidgets CMake will build the lib during the INSTALL step
+        BUILD_COMMAND
+        ""
+
+        # INSTALL_COMMAND with Release and Debug is needed for windows in order to create mswu and mswud
+        # directories, required later for the Findwxwidgets.cmake script.
+        # Related issue: https://github.com/wxWidgets/wxWidgets/issues/22861
+        #
+        # This is also safe for single configuration environments: the first command will ignore the
+        # '--config' param and build a CMAKE_BUILD_TYPE configuration. The second command will skip building
+        # after realizing the files are there.
+        INSTALL_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> -j --target install --config Debug
+        COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> -j --target install --config Release
+
         TEST_AFTER_INSTALL
         0
         DOWNLOAD_NO_PROGRESS
