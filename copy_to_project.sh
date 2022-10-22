@@ -22,6 +22,6 @@ else
         SEDOPT=
     fi
 
-    SEDCMD="sed -i $SEDOPT -e \"s/wx_cmake_template/$2/g\" \$(find \"$1\" -type f)"
+    SEDCMD="LC_ALL=C sed -i $SEDOPT -e \"s/wx_cmake_template/$2/g\" \$(find \"$1\" -type f -not -path \"$1/.git\")"
     eval $SEDCMD
 fi
