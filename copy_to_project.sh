@@ -5,7 +5,7 @@ if [ $# -lt 2 ]; then
 elif [ ! -d "$1" ]; then
     echo "Error: the directory $1 does not exists."
 else 
-    BASEDIR=$(dirname $(realpath "$0"))
+    BASEDIR=$(dirname $(readlink -f "$0" || realpath "$0"))
 
     cp -R "$BASEDIR/.vscode" "$1/"
     cp -R "$BASEDIR/src" "$1/"
