@@ -19,7 +19,7 @@
           "intelliSenseMode": "clang-x64"
       },
       {
-          "name": "Windows",
+          "name": "Win32",
           "includePath": [
               "${workspaceFolder}/src/**",
               "${workspaceFolder}/build/stage/include/**"
