@@ -6,6 +6,7 @@
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/subprojects/Build/wx_cmake_template_core/main.app",
+            "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build with CMake"
         },
         {
@@ -13,6 +14,7 @@
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/subprojects/Build/wx_cmake_template_core/main",
+            "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build with CMake"
         },
         {
@@ -20,6 +22,7 @@
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}\\build\\subprojects\\Build\\wx_cmake_template_core\\Debug\\main.exe",
+            "cwd": "${workspaceFolder}",
             "preLaunchTask": "Build with CMake"
         }
     ]
