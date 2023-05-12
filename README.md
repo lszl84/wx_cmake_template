@@ -6,11 +6,13 @@ A template for multiplatform wxWidgets projects using CMake
 
 This template searches for the wxWidgets library using `FindPackage`. If not found, it downloads the library source from GitHub, compiles it, and links it with the main project. 
 
-To achieve this, the super build pattern with `ExternalProject_Add` is used.
+The super build pattern with `ExternalProject_Add` is used to achieve this.
 
 ## Requirements
 
 This works on Windows, Mac, and Linux. You'll need `cmake` and a C++ compiler (tested on `clang`, `gcc`, and MSVC).
+
+Linux builds require the GTK3 library and headers installed in the system.
 
 ## Building
 
@@ -25,7 +27,7 @@ This will create a directory named `build` and create all build artifacts there.
 
 ## Using as a Template (Linux/Mac)
 
-To create another project from the template, use the provided `copy_to_project.sh` script.
+Use the provided `copy_to_project.sh` script to create another project from the template.
 
 ```bash
 ./copy_to_project.sh directory project_name
