@@ -1,3 +1,11 @@
+# 🚨 STOP! 🚨
+
+You might want to try much simpler version of this setup, with `FetchContent`: https://github.com/lszl84/wx_cmake_fetchcontent_template
+
+Tutorial here: https://www.youtube.com/watch?v=zjNg5HdgNO0
+
+Or use the more complex approach described below.
+
 # wx_cmake_template
 
 A template for multiplatform wxWidgets projects using CMake
