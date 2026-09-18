@@ -49,4 +49,5 @@ For details, see the [blog post](https://devmindscape.com/post/wxwidgets-cmake/)
 
 ---
 📚 More C++ and wxWidgets tutorials: [devmindscape.com](https://devmindscape.com) · 💼 Available for contract work: [devmindscape.com/work](https://devmindscape.com/work/)
+
 ---
