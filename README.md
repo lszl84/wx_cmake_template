@@ -48,6 +48,5 @@ This will create a copy of the template's directory structure in `directory`, re
 For details, see the [blog post](https://devmindscape.com/post/wxwidgets-cmake/) and the [video](https://www.youtube.com/watch?v=MfuBS9n5_aY) tutorial showcasing the installation on Linux, Windows, and Mac OS X. 
 
 ---
-📚 More C++ and wxWidgets tutorials: [devmindscape.com](https://devmindscape.com) · 💼 Available for contract work: [devmindscape.com/work](https://devmindscape.com/work/)
-
----
+📚 More C++ and wxWidgets tutorials: [devmindscape.com](https://devmindscape.com)\
+💼 Available for contract work: [devmindscape.com/work](https://devmindscape.com/work/)
